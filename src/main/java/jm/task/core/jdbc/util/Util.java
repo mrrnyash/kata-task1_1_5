@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class Util {
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/test_db";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/test_db_hibernate";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
     private static SessionFactory sessionFactory;
@@ -48,7 +48,7 @@ public class Util {
 
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-                settings.put(Environment.HBM2DDL_AUTO, "");
+                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
 
                 config.setProperties(settings);
 
